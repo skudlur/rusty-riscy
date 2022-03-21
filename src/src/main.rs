@@ -6,6 +6,8 @@ use std::io;
 use std::{thread, time};
 use std::fs;
 
+pub mod primetest;
+
 fn sleep() {
     let ten_millis = time::Duration::from_millis(1000);
     let now = time::Instant::now();
@@ -44,20 +46,9 @@ fn main() {
             Err(..) => println!("This is not an integer!"),
         };
 
-        if true {
-            println!("paranoia testing in");
-            sleep();
-            println!("3");
-            sleep();
-            println!("2");
-            sleep();
-            println!("1");
-            sleep();
-            println!("paranoia in progress");
-        }
-
-        if option != "" {
-            break;
+        match trim_option {
+            "1" => primetest::main(),
+            _ => println!("Enter a valid option!"),
         }
     }
 }
