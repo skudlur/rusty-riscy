@@ -8,3 +8,4 @@
 *.bin
 *.timestamp
 *.d
+*.lock
