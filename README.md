@@ -1,5 +1,6 @@
 # rusty-riscy
 
+Note: riscv-dev is the branch that contains the version for Embedded RISC-V systems.
 rusty-riscy is a performance testing and system resource monitoring tool written in Rust to benchmark RISC-V processors. 
 
 ## Objectives
