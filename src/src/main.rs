@@ -48,6 +48,7 @@ fn print_logo() {
 }
 
 fn main() {
+    // main function that calls all initial functions
     print_logo();
 
     loop {
