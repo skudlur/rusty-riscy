@@ -34,4 +34,8 @@ pub fn main() {
 
     let elapsed = start.elapsed();
     println!("Elapsed: {:.2?}", elapsed);
+
+    let mut score = 0;
+    let mut elapsed_int = 0;
+
 }
