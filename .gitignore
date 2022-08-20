@@ -9,3 +9,7 @@
 *.timestamp
 *.d
 *.lock
+*.rmeta
+*.rlib
+.fingerprint/
+debug/

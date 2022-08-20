@@ -26,10 +26,46 @@
 use std::io;
 use std::{thread, time};
 use std::fs;
+use sysinfo::{NetworkExt, NetworksExt, System, SystemExt};
 
 pub mod primetest;
 
+fn sys_info() {
+    /*
+        System information initial list
+    */
+
+    let mut sys = System::new_all();
+
+    let sys_name = sys.name();
+    let sliced_sys_name = &sys_name[0..4];
+
+    println!("System name:             {:?}", sliced_sys_name);
+    println!("System kernel version:   {:?}", sys.kernel_version());
+    println!("System OS version:       {:?}", sys.os_version());
+    println!("System host name:        {:?}", sys.host_name());
+
+    println!("NB CPUs: {}", sys.cpus().len());
+
+    println!("=> system:");
+    // RAM and swap information:
+    let mut mb_total_memory = 0;
+    let mut mb_used_memory = 0;
+    mb_total_memory = (sys.total_memory() / 1000) - 1125;
+    mb_used_memory = (sys.used_memory() / 1000) - 500; 
+    println!("total memory: {} MB", mb_total_memory);
+    println!("used memory : {} MB", mb_used_memory);
+
+    println!("=> disks:");
+    for disk in sys.disks() {
+        println!("{:?}", disk);
+    }
+}
+
 fn sleep() {
+
+    /* function to delay tests */
+
     let ten_millis = time::Duration::from_millis(1000);
     let now = time::Instant::now();
 
@@ -38,6 +74,9 @@ fn sleep() {
 }
 
 fn print_logo() {
+
+    /* function to print logo */
+
     print!("{}[2J", 27 as char); // to clear terminal screen
 
     let filename = "logo.txt";
@@ -48,8 +87,11 @@ fn print_logo() {
 }
 
 fn main() {
-    // main function that calls all initial functions
+    
+    /* main function that calls all initial functions */
+
     print_logo();
+    sys_info();
 
     loop {
         println!("Enter the option: ");
@@ -61,7 +103,7 @@ fn main() {
             .expect("Failed to read line");
 
         let trim_option = option.trim();
-        let mut trim_flag = false;
+        let trim_flag = false;
 
         match trim_option.parse::<u32>() {
             Ok(i) => println!("You entered option number: {}", i),
