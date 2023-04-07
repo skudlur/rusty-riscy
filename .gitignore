@@ -1,3 +1,6 @@
+# dir ignore
+target/
+
 # to ignore logs
 *.log
 

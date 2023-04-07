@@ -6,4 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-sysinfo = "0.25.2"
+riscv = "0.10.1"
+
+[[bin]]
+name = "rusty-riscy-bin"
+path = "src/bin.rs"
