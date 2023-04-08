@@ -1,12 +1,9 @@
 # rusty-riscy
 
-rusty-riscy is a performance testing and system resource monitoring tool written in Rust to benchmark RISC-V processors. 
+rusty-riscy is a performance testing and benchmarking tool for RISC-V processors written in Rust. 
 
 ## Objectives
 
-- To create a lightweight but highly functional tool to safely stress test CPUs and (potentially) memory and GPUs too.
-- To use as few third-party dependencies as possible to achieve the same.
+- To create a lightweight but highly functional tool to safely test RISC-V processors.
 
-**This tool is under development and is not advised to be used on anything but a virtual machine. The repository owner is not responsible for any damage caused to your machines.**
-
-**THIS TOOL IS UNDER DEVELOPMENT**
+**This tool is under development and is not advised to be used on anything but a QEMU environment. The repository owner is not responsible for any damage caused to your machines.**
